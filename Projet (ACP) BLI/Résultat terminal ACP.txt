@@ -1,0 +1,261 @@
+--- 1. Pré-traitement et matrice de corrélation ---
+Dimensions : 38 pays x 25 variables
+
+Valeurs manquantes par variable :
+Dwellings without basic facilities            3
+Housing expenditure                           3
+Rooms per person                              1
+Household net adjusted disposable income      5
+Household net wealth                          9
+Labour market insecurity                      4
+Long-term unemployment rate                   1
+Personal earnings                             3
+Educational attainment                        1
+Student skills                                1
+Years in education                            1
+Employees working very long hours             2
+Time devoted to leisure and personal care    16
+dtype: int64
+
+--- 2. Standardisation (centrage-réduction) ---
+
+--- 3. Calcul de l'ACP ---
+        Valeur propre  Variance expliquée (%)  Variance cumulée (%)
+Axe 1           9.335                  37.339                37.339
+Axe 2           3.292                  13.170                50.509
+Axe 3           2.791                  11.164                61.673
+Axe 4           1.440                   5.759                67.432
+Axe 5           1.235                   4.940                72.372
+Axe 6           1.154                   4.615                76.987
+Axe 7           1.010                   4.040                81.027
+Axe 8           0.944                   3.777                84.803
+Axe 9           0.757                   3.026                87.829
+Axe 10          0.610                   2.439                90.269
+
+Nombre d'axes avec valeur propre > 1 (Kaiser) : 7
+
+--- 4. Métriques d'interprétation (Axes 1 à 3) ---
+
+Coordonnées des variables :
+                                                   Axe 1  Axe 2  Axe 3
+GDP per capita (USD)                               0.798  0.337  0.143
+Dwellings without basic facilities                -0.705  0.245 -0.450
+Housing expenditure                                0.248 -0.221  0.183
+Rooms per person                                   0.737  0.201  0.083
+Household net adjusted disposable income           0.703  0.457  0.199
+Household net wealth                               0.370  0.696  0.198
+Labour market insecurity                          -0.481 -0.388  0.642
+Employment rate                                    0.766 -0.178 -0.492
+Long-term unemployment rate                       -0.305 -0.438  0.740
+Personal earnings                                  0.732  0.490  0.204
+Quality of support network                         0.782 -0.219 -0.143
+Educational attainment                             0.636 -0.396 -0.368
+Student skills                                     0.758 -0.388 -0.188
+Years in education                                 0.397 -0.323  0.262
+Air pollution                                     -0.740 -0.020 -0.058
+Water quality                                      0.715  0.062 -0.382
+Stakeholder engagement for developing regulations  0.147  0.132 -0.266
+Voter turnout                                      0.397  0.298  0.294
+Life expectancy                                    0.604  0.005  0.452
+Self-reported health                               0.341  0.504  0.485
+Feeling safe walking alone at night                0.757 -0.335 -0.029
+Homicide rate                                     -0.632  0.564 -0.262
+Employees working very long hours                 -0.594  0.641  0.004
+Time devoted to leisure and personal care         -0.004 -0.155  0.359
+Life satisfaction                                  0.852  0.179 -0.036
+
+cos² des variables :
+                                                   Axe 1  Axe 2  Axe 3  Somme (axes 1-3)
+GDP per capita (USD)                               0.637  0.113  0.020             0.771
+Dwellings without basic facilities                 0.497  0.060  0.203             0.760
+Housing expenditure                                0.061  0.049  0.033             0.144
+Rooms per person                                   0.544  0.040  0.007             0.591
+Household net adjusted disposable income           0.494  0.209  0.040             0.742
+Household net wealth                               0.137  0.485  0.039             0.661
+Labour market insecurity                           0.231  0.151  0.412             0.794
+Employment rate                                    0.587  0.032  0.242             0.860
+Long-term unemployment rate                        0.093  0.192  0.548             0.833
+Personal earnings                                  0.536  0.240  0.041             0.817
+Quality of support network                         0.612  0.048  0.021             0.680
+Educational attainment                             0.405  0.157  0.136             0.698
+Student skills                                     0.574  0.150  0.035             0.760
+Years in education                                 0.158  0.104  0.069             0.331
+Air pollution                                      0.548  0.000  0.003             0.552
+Water quality                                      0.511  0.004  0.146             0.661
+Stakeholder engagement for developing regulations  0.021  0.017  0.071             0.109
+Voter turnout                                      0.158  0.089  0.086             0.333
+Life expectancy                                    0.364  0.000  0.205             0.569
+Self-reported health                               0.117  0.254  0.235             0.605
+Feeling safe walking alone at night                0.573  0.112  0.001             0.685
+Homicide rate                                      0.399  0.318  0.069             0.786
+Employees working very long hours                  0.353  0.411  0.000             0.764
+Time devoted to leisure and personal care          0.000  0.024  0.129             0.153
+Life satisfaction                                  0.726  0.032  0.001             0.759
+
+Contributions des variables (%) :
+                                                   Axe 1  Axe 2  Axe 3
+GDP per capita (USD)                               6.824  3.441  0.730
+Dwellings without basic facilities                 5.326  1.828  7.259
+Housing expenditure                                0.657  1.487  1.200
+Rooms per person                                   5.826  1.230  0.244
+Household net adjusted disposable income           5.288  6.346  1.421
+Household net wealth                               1.467 14.730  1.401
+Labour market insecurity                           2.477  4.573 14.773
+Employment rate                                    6.289  0.958  8.662
+Long-term unemployment rate                        0.995  5.823 19.631
+Personal earnings                                  5.741  7.286  1.486
+Quality of support network                         6.554  1.463  0.735
+Educational attainment                             4.339  4.763  4.863
+Student skills                                     6.149  4.565  1.261
+Years in education                                 1.690  3.173  2.462
+Air pollution                                      5.869  0.012  0.122
+Water quality                                      5.472  0.118  5.230
+Stakeholder engagement for developing regulations  0.230  0.528  2.528
+Voter turnout                                      1.691  2.703  3.094
+Life expectancy                                    3.904  0.001  7.331
+Self-reported health                               1.249  7.705  8.417
+Feeling safe walking alone at night                6.135  3.402  0.030
+Homicide rate                                      4.274  9.669  2.466
+Employees working very long hours                  3.778 12.490  0.001
+Time devoted to leisure and personal care          0.000  0.728  4.607
+Life satisfaction                                  7.777  0.978  0.047
+
+Coordonnées des individus :
+                 Axe 1  Axe 2  Axe 3
+Country                             
+Australia        2.480  1.996  0.257
+Austria          1.829  0.295 -0.313
+Belgium          1.031  0.923  1.530
+Canada           3.007  1.020 -0.184
+Chile           -4.519 -0.190  0.510
+Colombia        -6.387  3.713 -0.756
+Costa Rica      -4.631  2.360  0.820
+Czechia          0.446 -1.576 -1.417
+Denmark          2.880 -0.580  0.105
+Estonia          0.262 -1.907 -2.085
+Finland          3.288 -1.062 -0.497
+France           0.564 -0.305  1.309
+Germany          2.083  0.074 -0.212
+Greece          -4.306 -3.315  5.171
+Hungary         -1.853 -1.942 -1.532
+Iceland          3.295  1.072 -0.069
+Ireland          2.214  0.435  0.538
+Israel          -0.358  0.576 -0.372
+Italy           -1.258 -0.967  3.038
+Japan           -0.099 -1.159 -2.108
+Korea           -1.400 -0.573 -1.769
+Latvia          -2.259 -2.637 -2.319
+Lithuania       -1.781 -1.681 -2.141
+Luxembourg       3.318  3.494  1.647
+Mexico          -8.312  4.122 -2.802
+Netherlands      2.986 -0.020 -0.119
+New Zealand      2.472  1.669  0.328
+Norway           3.715  0.372  0.091
+Poland          -1.179 -1.849 -1.715
+Portugal        -1.412 -1.715  0.026
+Slovak Republic -1.601 -2.437 -0.471
+Slovenia         0.530 -1.699 -0.908
+Spain           -0.494 -1.534  3.634
+Sweden           2.889 -0.280  0.281
+Switzerland      3.588  0.168 -0.067
+Türkiye         -5.559  0.899  3.040
+United Kingdom   1.581  0.755 -0.372
+United States    2.953  3.481 -0.096
+
+cos² des individus :
+                 Axe 1  Axe 2  Axe 3  Somme (axes 1-3)
+Country                                               
+Australia        0.300  0.194  0.003             0.497
+Austria          0.348  0.009  0.010             0.368
+Belgium          0.092  0.074  0.202             0.368
+Canada           0.471  0.054  0.002             0.527
+Chile            0.561  0.001  0.007             0.569
+Colombia         0.622  0.210  0.009             0.841
+Costa Rica       0.549  0.143  0.017             0.709
+Czechia          0.019  0.242  0.196             0.457
+Denmark          0.594  0.024  0.001             0.619
+Estonia          0.005  0.259  0.310             0.573
+Finland          0.607  0.063  0.014             0.684
+France           0.032  0.009  0.171             0.212
+Germany          0.467  0.001  0.005             0.473
+Greece           0.276  0.164  0.398             0.838
+Hungary          0.200  0.219  0.136             0.556
+Iceland          0.551  0.058  0.000             0.610
+Ireland          0.322  0.012  0.019             0.354
+Israel           0.013  0.033  0.014             0.060
+Italy            0.073  0.043  0.427             0.544
+Japan            0.000  0.058  0.192             0.250
+Korea            0.060  0.010  0.095             0.164
+Latvia           0.241  0.328  0.254             0.823
+Lithuania        0.181  0.161  0.262             0.604
+Luxembourg       0.260  0.288  0.064             0.612
+Mexico           0.663  0.163  0.075             0.902
+Netherlands      0.666  0.000  0.001             0.667
+New Zealand      0.311  0.142  0.005             0.458
+Norway           0.665  0.007  0.000             0.672
+Poland           0.097  0.239  0.206             0.541
+Portugal         0.120  0.177  0.000             0.298
+Slovak Republic  0.100  0.232  0.009             0.341
+Slovenia         0.029  0.299  0.085             0.414
+Spain            0.012  0.116  0.652             0.780
+Sweden           0.586  0.005  0.006             0.597
+Switzerland      0.536  0.001  0.000             0.537
+Türkiye          0.525  0.014  0.157             0.695
+United Kingdom   0.258  0.059  0.014             0.331
+United States    0.261  0.363  0.000             0.624
+
+Contributions des individus (%) :
+                 Axe 1  Axe 2  Axe 3
+Country                             
+Australia        1.733  3.186  0.062
+Austria          0.943  0.070  0.092
+Belgium          0.300  0.681  2.207
+Canada           2.549  0.831  0.032
+Chile            5.756  0.029  0.245
+Colombia        11.499 11.022  0.539
+Costa Rica       6.047  4.453  0.635
+Czechia          0.056  1.984  1.894
+Denmark          2.339  0.269  0.010
+Estonia          0.019  2.907  4.097
+Finland          3.047  0.902  0.233
+France           0.090  0.074  1.615
+Germany          1.223  0.004  0.043
+Greece           5.228  8.784 25.216
+Hungary          0.968  3.015  2.212
+Iceland          3.062  0.919  0.004
+Ireland          1.381  0.151  0.273
+Israel           0.036  0.265  0.131
+Italy            0.446  0.748  8.702
+Japan            0.003  1.073  4.192
+Korea            0.553  0.262  2.950
+Latvia           1.439  5.557  5.070
+Lithuania        0.895  2.257  4.322
+Luxembourg       3.104  9.758  2.557
+Mexico          19.477 13.577  7.404
+Netherlands      2.513  0.000  0.013
+New Zealand      1.723  2.225  0.101
+Norway           3.890  0.111  0.008
+Poland           0.392  2.731  2.774
+Portugal         0.562  2.349  0.001
+Slovak Republic  0.722  4.748  0.209
+Slovenia         0.079  2.306  0.777
+Spain            0.069  1.880 12.449
+Sweden           2.354  0.063  0.074
+Switzerland      3.628  0.023  0.004
+Türkiye          8.713  0.645  8.712
+United Kingdom   0.704  0.456  0.131
+United States    2.458  9.686  0.009
+
+--- 5. Projections sur le plan factoriel 1-2 ---
+
+--- 6. Analyse de sensibilité (sans Mexico et Colombia) ---
+       Var (%) complet  Cumul (%) complet  Var (%) sans outliers  Cumul (%) sans outliers
+Axe 1           37.339             37.339                 33.103                   33.103
+Axe 2           13.170             50.509                 14.233                   47.336
+Axe 3           11.164             61.673                  9.749                   57.085
+Axe 4            5.759             67.432                  6.316                   63.401
+Axe 5            4.940             72.372                  5.634                   69.035
+
+--- 7. Projection sur le plan factoriel 1-3 ---
+
+Analyse ACP terminée.

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# LaTeX sources & build artifacts (keeps GitHub language detection 100% Python)
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Internal university files & Moodle READMEs
+Consignes*.pdf
+mail*.txt
+/README.md
+ReadMe.txt

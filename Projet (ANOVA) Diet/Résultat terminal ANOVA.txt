@@ -1,0 +1,72 @@
+--- 1. Préparation des données ---
+Dimensions : 78 individus x 4 variables
+
+Valeurs manquantes :
+gender          0
+diet            0
+preweight       0
+weight6weeks    0
+dtype: int64
+
+Effectifs par régime et par genre :
+gender   F   M  All
+diet               
+A       14  10   24
+B       14  13   27
+C       15  12   27
+All     43  35   78
+
+Statistiques descriptives par régime :
+       count   mean    std     min    25%    50%    75%    max
+diet                                                          
+A    24.0000 3.3000 2.2401 -0.6000 1.9750 3.0500 3.9500 9.0000
+B    27.0000 3.0259 2.5234 -2.1000 1.7000 3.3000 4.5000 7.9000
+C    27.0000 5.1481 2.3956  0.5000 3.4500 5.4000 7.0000 9.2000
+
+Statistiques descriptives par régime et genre :
+              count   mean    std     min    25%    50%    75%    max
+diet gender                                                          
+A    F      14.0000 3.0500 2.0650  0.7000 1.9250 2.8500 3.4750 8.5000
+     M      10.0000 3.6500 2.5361 -0.6000 2.6750 3.7000 4.4000 9.0000
+B    F      14.0000 2.6071 2.2889 -2.1000 1.7750 2.8500 4.0500 7.0000
+     M      13.0000 3.4769 2.7740 -1.4000 1.7000 4.2000 5.4000 7.9000
+C    F      15.0000 5.8800 1.8895  0.9000 5.2000 6.8000 7.1000 7.8000
+     M      12.0000 4.2333 2.7161  0.5000 2.7250 3.8000 5.5000 9.2000
+
+--- 2. Génération des graphiques exploratoires ---
+
+--- 3. Vérification des hypothèses (Normalité et Homoscédasticité) ---
+
+Shapiro-Wilk (modèle 1 facteur) : W = 0.9921, p-value = 0.9161
+-> p > 0.05 : On ne rejette pas H0, les résidus suivent une loi normale.
+Shapiro-Wilk (modèle 2 facteurs) : W = 0.9798, p-value = 0.2527
+
+Test de Levene (médiane) : F = 0.6257, p-value = 0.5377
+Test de Levene (moyenne) : F = 0.6589, p-value = 0.5204
+-> p > 0.05 : On ne rejette pas H0, il y a homoscédasticité entre les régimes.
+
+--- 4. ANOVA à 1 facteur (Régime) ---
+           sum_sq      df  mean_sq      F  PR(>F)
+C(diet)   71.0937  2.0000  35.5468 6.1974  0.0032
+Residual 430.1793 75.0000   5.7357    NaN     NaN
+
+-> p = 0.0032 < 0.05 : On rejette H0, le régime a un impact significatif.
+
+Test post-hoc de Tukey HSD :
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+     A      B  -0.2741 0.9125 -1.8806 1.3325  False
+     A      C   1.8481 0.0201  0.2416 3.4547   True
+     B      C   2.1222 0.0048  0.5636 3.6808   True
+---------------------------------------------------
+
+--- 5. ANOVA à 2 facteurs (Régime * Genre) ---
+                    sum_sq      df  mean_sq      F  PR(>F)
+C(diet)            71.0070  2.0000  35.5035 6.3132  0.0030
+C(gender)           0.1355  1.0000   0.1355 0.0241  0.8771
+C(diet):C(gender)  25.1407  2.0000  12.5704 2.2353  0.1143
+Residual          404.9030 72.0000   5.6237    NaN     NaN
+
+Analyse ANOVA terminée.
