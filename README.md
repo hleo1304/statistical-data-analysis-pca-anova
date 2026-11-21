@@ -83,12 +83,10 @@ statistical-data-analysis-pca-anova/
 ├── Projet (ACP) BLI/
 │   ├── analyse_acp.py
 │   ├── better-life-index-2024.csv
-│   ├── Résultat terminal ACP.txt
 │   └── resultats/
 └── Projet (ANOVA) Diet/
     ├── analyse_anova.py
     ├── diet.csv
-    ├── Résultat terminal ANOVA.txt
     └── resultats/
 ```
 
