@@ -9,7 +9,7 @@ A two-part applied statistics project exploring **dimensionality reduction** and
 1. **Principal Component Analysis (PCA)** on the **OECD Better Life Index 2024** dataset ($n = 38$ countries, $p = 25$ socioeconomic and well-being indicators), including an outlier sensitivity analysis.
 2. **One-Way & Two-Way ANOVA** on a **Diet Weight-Loss** dataset ($N = 78$ individuals), with full assumption validation (Shapiro-Wilk, Levene) and post-hoc pairwise comparisons (Tukey HSD).
 
-> A full written report (in French) is available in [`Analyse_Des_Données - Rapport - Halepidis_Lion.pdf`](../Analyse_Des_Donn%C3%A9es%20-%20Rapport%20-%20Halepidis_Lion.pdf).
+> A full written report (in French) is available in [`Analyse_Des_Données - Rapport - Halepidis_Lion.pdf`](Analyse_Des_Donn%C3%A9es%20-%20Rapport%20-%20Halepidis_Lion.pdf).
 
 ---
 
@@ -32,10 +32,10 @@ A two-part applied statistics project exploring **dimensionality reduction** and
 ### Key Visualizations
 | Correlation Circle (PC1–PC2) | Country Projection (PC1–PC2) |
 | :---: | :---: |
-| ![Correlation Circle](../Projet%20(ACP)%20BLI/resultats/04_cercle_correlations.png) | ![Country Projection](../Projet%20(ACP)%20BLI/resultats/05_projection_individus.png) |
+| ![Correlation Circle](Projet%20(ACP)%20BLI/resultats/04_cercle_correlations.png) | ![Country Projection](Projet%20(ACP)%20BLI/resultats/05_projection_individus.png) |
 
 **Sensitivity Analysis (excluding Mexico & Colombia):**
-![Sensitivity Analysis](../Projet%20(ACP)%20BLI/resultats/06_comparaison_sans_outliers.png)
+![Sensitivity Analysis](Projet%20(ACP)%20BLI/resultats/06_comparaison_sans_outliers.png)
 
 ---
 
@@ -63,7 +63,7 @@ A two-part applied statistics project exploring **dimensionality reduction** and
 ### Key Visualizations
 | Weight-Loss Distribution by Diet & Gender | Diet × Gender Interaction Plot (95% CI) |
 | :---: | :---: |
-| ![Weight-Loss Distribution](../Projet%20(ANOVA)%20Diet/resultats/02_distribution_perte_poids.png) | ![Interaction Plot](../Projet%20(ANOVA)%20Diet/resultats/04_interaction_genre_regime.png) |
+| ![Weight-Loss Distribution](Projet%20(ANOVA)%20Diet/resultats/02_distribution_perte_poids.png) | ![Interaction Plot](Projet%20(ANOVA)%20Diet/resultats/04_interaction_genre_regime.png) |
 
 ---
 
@@ -77,8 +77,7 @@ A two-part applied statistics project exploring **dimensionality reduction** and
 ## Project Structure
 ```text
 statistical-data-analysis-pca-anova/
-├── .github/
-│   └── README.md
+├── README.md
 ├── requirements.txt
 ├── Analyse_Des_Données - Rapport - Halepidis_Lion.pdf
 ├── Projet (ACP) BLI/
